@@ -1,162 +1,191 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TrueHabits - Canje de Premios</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-    header {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header img {
-      height: 50px;
-    }
-    nav {
-      display: flex;
-      gap: 15px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .user-info {
-      font-size: 14px;
-      text-align: right;
-    }
-    .banner {
-      background-color: #e8f5e9;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    .banner h1 {
-      color: #4CAF50;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 20px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .prizes {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .prize {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .prize:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-    }
-    .prize img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-    }
-    .prize-content {
-      padding: 15px;
-      text-align: center;
-    }
-    .prize-content h3 {
-      margin: 10px 0;
-      color: #4CAF50;
-    }
-    .prize-content p {
-      font-size: 14px;
-      color: #555;
-    }
-    .prize-content button {
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-    .prize-content button:hover {
-      background-color: #45a049;
-    }
-    footer {
-      background-color: #4CAF50;
-      color: white;
-      text-align: center;
-      padding: 10px 0;
-      margin-top: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrueHabits - Canjea tus Puntos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            position: relative;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        header nav .dropdown {
+            position: relative;
+        }
+
+        header nav .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            top: 30px;
+            left: 0;
+            z-index: 10;
+        }
+
+        header nav .dropdown-content a {
+            display: block;
+            padding: 5px 0;
+            text-decoration: none;
+            color: #333;
+        }
+
+        header nav .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        header nav .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .user-info {
+            font-size: 16px;
+        }
+
+        .main-banner {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .main-banner h1 {
+            font-size: 32px;
+        }
+
+        .rewards-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .reward-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .reward-card:hover {
+            transform: scale(1.05);
+        }
+
+        .reward-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .reward-card .content {
+            padding: 15px;
+        }
+
+        .reward-card .content h3 {
+            font-size: 18px;
+            margin: 0 0 10px;
+        }
+
+        .reward-card .content p {
+            margin: 0 0 15px;
+            font-size: 14px;
+        }
+
+        .reward-card .content button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .reward-card .content button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <img src="https://raw.githubusercontent.com/RobinsonRiosV/web-premios/main/Logo2.png" alt="TrueHabits Logo">
-    <nav>
-      <a href="#">Canjear Puntos</a>
-      <a href="#">Cómo Acumular</a>
-      <a href="#">Centro de Ayuda</a>
-    </nav>
-    <div class="user-info">
-      <p>Robinson Ríos</p>
-      <p>1500 puntos</p>
-    </div>
-  </header>
-  <div class="banner">
-    <h1>¿Qué hábito quieres mejorar hoy?</h1>
-  </div>
-  <main class="container">
-    <h2>Premios Disponibles</h2>
-    <div class="prizes">
-      <div class="prize">
-        <img src="https://via.placeholder.com/250x150" alt="Zapatillas Nike">
-        <div class="prize-content">
-          <h3>Zapatillas Nike</h3>
-          <p>Canjea este premio por 1200 puntos.</p>
-          <button>Canjear</button>
+    <header>
+        <div class="logo">TrueHabits</div>
+        <nav>
+            <a href="#">Inicio</a>
+            <div class="dropdown">
+                <a href="#">Canjea tus puntos TrueHabits</a>
+                <div class="dropdown-content">
+                    <a href="#">Deporte</a>
+                    <a href="#">Estilo de vida</a>
+                    <a href="#">Alimentación</a>
+                </div>
+            </div>
+            <a href="#">Cómo Acumular</a>
+        </nav>
+        <div class="user-info">
+            Robinson Ríos | Puntos: 1200
         </div>
-      </div>
-      <div class="prize">
-        <img src="https://via.placeholder.com/250x150" alt="Descuento Librería">
-        <div class="prize-content">
-          <h3>Descuento en Librería</h3>
-          <p>Canjea este premio por 800 puntos.</p>
-          <button>Canjear</button>
+    </header>
+
+    <section class="main-banner">
+        <h1>¿Qué hábito quieres mejorar hoy?</h1>
+    </section>
+
+    <section class="rewards-section">
+        <div class="reward-card">
+            <img src="https://raw.githubusercontent.com/RobinsonRiosV/web-premios/main/mat%20de%20yoga.webp" alt="Mat de Yoga">
+            <div class="content">
+                <h3>Mat de Yoga</h3>
+                <p>Perfecto para tus sesiones de meditación y estiramiento.</p>
+                <button>Canjear por 800 puntos</button>
+            </div>
         </div>
-      </div>
-      <div class="prize">
-        <img src="https://via.placeholder.com/250x150" alt="Mat de Yoga">
-        <div class="prize-content">
-          <h3>Mat de Yoga</h3>
-          <p>Canjea este premio por 1000 puntos.</p>
-          <button>Canjear</button>
+
+        <div class="reward-card">
+            <img src="https://raw.githubusercontent.com/RobinsonRiosV/web-premios/main/zapatillas%20nike.jpg" alt="Zapatillas Nike">
+            <div class="content">
+                <h3>Zapatillas Nike</h3>
+                <p>Ideales para salir a correr y alcanzar tus metas.</p>
+                <button>Canjear por 1200 puntos</button>
+            </div>
         </div>
-      </div>
-    </div>
-  </main>
-  <footer>
-    <p>&copy; 2025 TrueHabits. Todos los derechos reservados.</p>
-  </footer>
+    </section>
 </body>
 </html>
 
