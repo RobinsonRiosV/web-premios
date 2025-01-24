@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TrueHabits - ¿Qué quieres canjear hoy?</title>
+  <title>TrueHabits - Canje de Premios</title>
   <style>
-    /* Estilos generales */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -13,12 +12,8 @@
       background-color: #f4f4f4;
       color: #333;
     }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
     header {
-      background-color: #2c3e50;
+      background-color: #4CAF50;
       color: white;
       padding: 10px 20px;
       display: flex;
@@ -34,39 +29,24 @@
     }
     nav a {
       color: white;
+      text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s;
     }
     nav a:hover {
-      color: #1abc9c;
+      text-decoration: underline;
     }
     .user-info {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      font-size: 14px;
+      text-align: right;
     }
-    .user-info span {
-      font-weight: bold;
-    }
-
-    /* Banner principal */
     .banner {
-      background-image: url('https://via.placeholder.com/1200x400'); /* Cambia esta URL por una imagen motivadora */
-      background-size: cover;
-      background-position: center;
-      color: white;
+      background-color: #e8f5e9;
       text-align: center;
-      padding: 50px 20px;
+      padding: 40px 20px;
     }
     .banner h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+      color: #4CAF50;
     }
-    .banner p {
-      font-size: 1.2rem;
-    }
-
-    /* Sección de premios */
     .container {
       max-width: 1200px;
       margin: 20px auto;
@@ -75,116 +55,108 @@
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-    .section-title {
-      text-align: center;
-      color: #2c3e50;
-      margin-bottom: 20px;
-    }
     .prizes {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
-    .prize-card {
+    .prize {
       border: 1px solid #ddd;
       border-radius: 8px;
       overflow: hidden;
-      background-color: #f9f9f9;
-      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-    .prize-card:hover {
+    .prize:hover {
       transform: translateY(-5px);
       box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
     }
-    .prize-card img {
+    .prize img {
       width: 100%;
       height: 150px;
       object-fit: cover;
     }
-    .prize-card .info {
+    .prize-content {
       padding: 15px;
       text-align: center;
     }
-    .prize-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      color: #2c3e50;
+    .prize-content h3 {
+      margin: 10px 0;
+      color: #4CAF50;
     }
-    .prize-card button {
-      background-color: #1abc9c;
+    .prize-content p {
+      font-size: 14px;
+      color: #555;
+    }
+    .prize-content button {
+      background-color: #4CAF50;
       color: white;
       border: none;
       padding: 10px 15px;
       border-radius: 5px;
       cursor: pointer;
-      transition: background-color 0.3s;
+      margin-top: 10px;
     }
-    .prize-card button:hover {
-      background-color: #16a085;
+    .prize-content button:hover {
+      background-color: #45a049;
     }
-
-    /* Footer */
     footer {
-      background-color: #2c3e50;
+      background-color: #4CAF50;
       color: white;
       text-align: center;
-      padding: 10px 20px;
+      padding: 10px 0;
       margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <!-- Cabecera -->
   <header>
-    <img src="https://robinsonriosv.github.io/web-premios/Logo2.png" alt="TrueHabits Logo">
+    <img src="https://raw.githubusercontent.com/RobinsonRiosV/web-premios/main/Logo2.png" alt="TrueHabits Logo">
     <nav>
-      <a href="#">Inicio</a>
-      <a href="#">Premios</a>
-      <a href="#">Contacto</a>
+      <a href="#">Canjear Puntos</a>
+      <a href="#">Cómo Acumular</a>
+      <a href="#">Centro de Ayuda</a>
     </nav>
     <div class="user-info">
-      <span>Robinson Ríos</span>
-      <span>1200 puntos</span>
+      <p>Robinson Ríos</p>
+      <p>1500 puntos</p>
     </div>
   </header>
-
-  <!-- Banner principal -->
   <div class="banner">
     <h1>¿Qué hábito quieres mejorar hoy?</h1>
-    <p>Canjea tus puntos TrueHabits por increíbles premios.</p>
   </div>
-
-  <!-- Sección de premios -->
-  <div class="container">
-    <h2 class="section-title">Premios Disponibles</h2>
+  <main class="container">
+    <h2>Premios Disponibles</h2>
     <div class="prizes">
-      <div class="prize-card">
-        <img src="https://via.placeholder.com/250" alt="Zapatillas Nike">
-        <div class="info">
-          <h3>Descuento en Zapatillas Nike</h3>
-          <button>Canjear (500 puntos)</button>
+      <div class="prize">
+        <img src="https://via.placeholder.com/250x150" alt="Zapatillas Nike">
+        <div class="prize-content">
+          <h3>Zapatillas Nike</h3>
+          <p>Canjea este premio por 1200 puntos.</p>
+          <button>Canjear</button>
         </div>
       </div>
-      <div class="prize-card">
-        <img src="https://via.placeholder.com/250" alt="Cupones para Libros">
-        <div class="info">
-          <h3>Cupones para Libros</h3>
-          <button>Canjear (300 puntos)</button>
+      <div class="prize">
+        <img src="https://via.placeholder.com/250x150" alt="Descuento Librería">
+        <div class="prize-content">
+          <h3>Descuento en Librería</h3>
+          <p>Canjea este premio por 800 puntos.</p>
+          <button>Canjear</button>
         </div>
       </div>
-      <div class="prize-card">
-        <img src="https://via.placeholder.com/250" alt="Mat de Yoga">
-        <div class="info">
+      <div class="prize">
+        <img src="https://via.placeholder.com/250x150" alt="Mat de Yoga">
+        <div class="prize-content">
           <h3>Mat de Yoga</h3>
-          <button>Canjear (400 puntos)</button>
+          <p>Canjea este premio por 1000 puntos.</p>
+          <button>Canjear</button>
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- Pie de página -->
+  </main>
   <footer>
-    <p>© 2025 TrueHabits. Todos los derechos reservados.</p>
+    <p>&copy; 2025 TrueHabits. Todos los derechos reservados.</p>
   </footer>
 </body>
 </html>
+
