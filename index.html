@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Canje de Premios</title>
+  <title>Canje de Premios - TrueHabits</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -13,10 +13,38 @@
       color: #333;
     }
     header {
-      background-color: #4CAF50;
+      background-color: #004d40;
       color: white;
       padding: 10px 20px;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img {
+      height: 50px;
+    }
+    .nav-buttons {
+      display: flex;
+      gap: 15px;
+    }
+    .nav-buttons a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      border: 1px solid white;
+      border-radius: 5px;
+    }
+    .nav-buttons a:hover {
+      background-color: white;
+      color: #004d40;
+    }
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .user-info span {
+      font-weight: bold;
     }
     main {
       padding: 20px;
@@ -31,7 +59,7 @@
     }
     h1 {
       text-align: center;
-      color: #4CAF50;
+      color: #004d40;
     }
     .prize {
       display: flex;
@@ -44,7 +72,7 @@
       background-color: #f9f9f9;
     }
     .prize button {
-      background-color: #4CAF50;
+      background-color: #004d40;
       color: white;
       border: none;
       padding: 10px 15px;
@@ -52,27 +80,38 @@
       cursor: pointer;
     }
     .prize button:hover {
-      background-color: #45a049;
+      background-color: #00332e;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Canje de Premios</h1>
+    <div class="logo">
+      <img src="Logo2.png" alt="TrueHabits Logo">
+    </div>
+    <div class="nav-buttons">
+      <a href="#">Canjear puntos TrueHabits</a>
+      <a href="#">Cómo acumular</a>
+      <a href="#">Centro de ayuda</a>
+    </div>
+    <div class="user-info">
+      <span>Robinson Ríos</span>
+      <span>1200 puntos</span>
+    </div>
   </header>
   <main>
     <div class="container">
       <h2>Premios Disponibles</h2>
       <div class="prize">
-        <span>Premio 1</span>
+        <span>Premio 1: Ropa deportiva</span>
         <button>Canjear (50 puntos)</button>
       </div>
       <div class="prize">
-        <span>Premio 2</span>
+        <span>Premio 2: Descuento en librerías</span>
         <button>Canjear (100 puntos)</button>
       </div>
       <div class="prize">
-        <span>Premio 3</span>
+        <span>Premio 3: Mochila para running</span>
         <button>Canjear (150 puntos)</button>
       </div>
     </div>
